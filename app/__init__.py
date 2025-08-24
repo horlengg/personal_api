@@ -13,7 +13,7 @@ def create_app():
         "http://localhost:5000",
         "http://localhost:3000",
         "http://localhost:8000", 
-        "https://horleng.vercel.app/"
+        "https://horleng.vercel.app"
     ]
     CORS(app, resources={r"/*": {"origins": allow_origins}}, supports_credentials=True)
 
