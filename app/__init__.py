@@ -15,7 +15,7 @@ def create_app():
         "http://localhost:8000", 
         "https://horleng.vercel.app/"
     ]
-    CORS(app, origins=allow_origins)
+    CORS(app, resources={r"/*": {"origins": allow_origins}}, supports_credentials=True)
 
 
     app.config["MONGO_URI"] = DB_URI
