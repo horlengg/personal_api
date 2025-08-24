@@ -1,0 +1,63 @@
+# Python cache and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyd
+*.pyo
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+.env/
+env/
+.venv/
+
+# Environment & secrets
+*.env
+.env.*
+instance/
+*.sqlite3
+*.db
+
+# Flask-related
+*.log
+*.pid
+*.pid.lock
+
+# Coverage and test reports
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+.cache
+nosetests.xml
+pytest.xml
+
+# IDE/editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build / Distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter notebooks (if used with Flask)
+.ipynb_checkpoints/
+
+# Migrations (if using Flask-Migrate)
+migrations/versions/*.pyc
+migrations/versions/*.py~
