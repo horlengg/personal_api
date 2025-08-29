@@ -42,7 +42,7 @@ data :
 {{
 "url": "{data['url']}",
 "device": "{data['device']}",
-"ip_address": "127.0.0.1"
+"ip_address": "{get_client_ip()}"
 }}
 </pre>
             """
