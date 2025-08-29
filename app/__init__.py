@@ -1,9 +1,9 @@
 from flask import Flask
 from .routes.api import api_bp
 from .routes.views import views_bp
-from app.db import mongo
-from config import DB_URI,AUTH_EMAIL,AUTH_PWD
-from .utils import mail
+# from app.db import mongo
+# from config import DB_URI,AUTH_EMAIL,AUTH_PWD
+# from .utils import mail
 from flask_cors import CORS
 
 def create_app():
@@ -18,17 +18,10 @@ def create_app():
     CORS(app, resources={r"/*": {"origins": allow_origins}}, supports_credentials=True)
 
 
-    app.config["MONGO_URI"] = DB_URI
-    # Initialize PyMongo
-    mongo.init_app(app)
+    # app.config["MONGO_URI"] = DB_URI
+    # # Initialize PyMongo
+    # mongo.init_app(app)
 
-    app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-    app.config['MAIL_PORT'] = 587
-    app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USE_SSL'] = False
-    app.config['MAIL_USERNAME'] = AUTH_EMAIL
-    app.config['MAIL_PASSWORD'] = AUTH_PWD
-    mail.init_app(app)
 
     # Config
     app.config.from_object("config")
