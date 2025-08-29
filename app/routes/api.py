@@ -32,9 +32,17 @@ def web_porfolio_view():
             "device" : f'Browser: {browser}, OS: {os}, Device: {device}',
             "ip_address" : get_client_ip()
         }
+        
+        greeting_title = ""
+        
+        if data['url'].endswith(":::status.leaving"):
+            greeting_title = "Heyyyy Leng, a user leave your website!."
+            data["url"] = data["url"][:-len(":::status.leaving")]
+        else :
+            greeting_title = "Heyyyy Leng, a user visited your website!."
 
         info = f"""
-Heyyyy , a user visited your website!.
+{greeting_title}
 
 data : 
 
