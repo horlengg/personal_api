@@ -1,18 +1,17 @@
 # utils/telegram_helper.py
 
 import requests
+from config import TELEGRAM_BOT_BASE_URL,TELEGRAM_BOT_CHAT_ID
 
 class TelegramHelper:
     def __init__(self):
-        self.bot_token = "8343350308:AAHh8ovjZc19ujmtp79lsoNwHVKPSxVVxo4"
-        self.base_url = f"https://api.telegram.org/bot{self.bot_token}"
-        self.chat_id = "1756952475"
+        self.base_url = TELEGRAM_BOT_BASE_URL
 
     def send_message(self, message: str) -> dict:
         """Send a text message to a user or group by chat_id."""
         url = f"{self.base_url}/sendMessage"
         payload = {
-            "chat_id": self.chat_id,
+            "chat_id": TELEGRAM_BOT_CHAT_ID,
             "text": message,
             "parse_mode" : "HTML"
         }
